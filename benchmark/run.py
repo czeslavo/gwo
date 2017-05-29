@@ -3,13 +3,12 @@
 from numpy import std
 import optimization as op
 
+
 num_of_evaluations = 100000
-#population = 30
 dim = 10
 x_size_min = -100.0
 x_size_max = 100.0
 repetitions = 30
-#repetitions = 2
 
 functions_map = {
 	'bent_cigar': op.function.bent_cigar,
@@ -65,7 +64,7 @@ for func_name in functions_map.keys(): # func name
 for main_i in range(repetitions):
 	for func_name, func_enum_value in functions_map.iteritems():
 		for population in populations_proposed: # population
-			# particle_swarm_opimization for each functions
+			# particle_swarm_opimization for each function
 			pso = op.particle_swarm_optimization(func_enum_value, x_size_min, x_size_max, dim, num_of_evaluations, population)
 			temp_name = 'pso_' + func_name + '_' + str(population)
 			(best_list_pso[temp_name]).append(float(pso.best))
@@ -85,4 +84,5 @@ for func_name in functions_map.keys(): # func name
 		save_bests(best_list_pso['pso_' + func_name + '_' + str(population)], 'pso_' + func_name + '_' + str(population))
 		for a in calculation_types_map.keys(): # a param
 			for C in calculation_types_map.keys(): # C param
-				save_bests(best_list_gwo['gwo_' + func_name + '_' + a + '_' + C + '_' + str(population)], 'gwo_' + func_name + '_' + a + '_' + C + '_' + str(population))
+				save_bests(best_list_gwo['gwo_' + func_name + '_' + a + '_' + C + '_' + str(population)], 
+					'gwo_' + func_name + '_' + a + '_' + C + '_' + str(population))
