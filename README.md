@@ -1,8 +1,18 @@
-# Projekt badający algorytm optymalizacji __Grey wolf optimizer__ 
+# __Grey Wolf Optimizer (GWO)__ C++ implementation with Python bindings
 
-## Funkcje do benchmarku
+## Structure
+- _optimization/_ - implementation and python bindings
+- _benchmark/_ - python code using the bindings, producing data for benchmarking
+- _parpers/_ - original paper on GWO
 
-1. Bent Cigar Function
-2. Rosenbrock
-3. Rastrigin
-4. Zakharov
+## Usage
+You can go directly to `benchmark` directory and execute:
+``
+make run
+``
+
+It will compile `optimization.so` shared library (with python bindings) and run python script, 
+which imports the aforementioned library (module).
+Results of the execution will be present in `data/` and `bests/` directories.
+
+
