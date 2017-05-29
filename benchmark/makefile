@@ -2,13 +2,12 @@ all: run
 
 compile_optimizer:
 	cd ../optimization
-	mkdir build
+	mkdir -p build
 	cd build
 	cmake ..
 	make
 
-prepare: clean
-	cd ../optimization/ && mkdir -p build && cd build && cmake .. && make 
+prepare: clean compile_optimizer
 	cp ../optimization/build/optimization.so .
 	mkdir data/
 	mkdir bests/
