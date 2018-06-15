@@ -94,7 +94,7 @@ solution grey_wolf_optimizer(function f, calculation_type calc_type_a, calculati
                 double r2 = get_random(0., 1.);
 
                 double A1 = 2. * a * r1 - a;
-                double C1 = calculate_c(calc_type_c, r1, iteration, max_number_of_iterations);
+                double C1 = calculate_c(calc_type_c, r2, iteration, max_number_of_iterations);
 
                 const double D_alpha = std::abs(C1 * alpha_pos[j] - agent[j]);
                 const double X1 = alpha_pos[j] - A1 * D_alpha;
@@ -104,7 +104,7 @@ solution grey_wolf_optimizer(function f, calculation_type calc_type_a, calculati
                 r2 = get_random(0., 1.);
 
                 double A2 = 2. * a * r1 - a;
-                double C2 = calculate_c(calc_type_c, r1, iteration, max_number_of_iterations);
+                double C2 = calculate_c(calc_type_c, r2, iteration, max_number_of_iterations);
 
                 const double D_beta = std::abs(C2 * beta_pos[j] - agent[j]);
                 const double X2 = beta_pos[j] - A2 * D_beta;
@@ -114,7 +114,7 @@ solution grey_wolf_optimizer(function f, calculation_type calc_type_a, calculati
                 r2 = get_random(0., 1.);
 
                 double A3 = 2. * a * r1 - a;
-                double C3 = calculate_c(calc_type_c, r1, iteration, max_number_of_iterations);
+                double C3 = calculate_c(calc_type_c, r2, iteration, max_number_of_iterations);
 
                 const double D_delta = std::abs(C3 * delta_pos[j] - agent[j]);
                 const double X3 = delta_pos[j] - A3 * D_delta;
